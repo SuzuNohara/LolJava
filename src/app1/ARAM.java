@@ -29,8 +29,32 @@ public class ARAM {
         equipo2.add(campeon2);
     }
     
-    public void generarMinions(){
-        
+    public void minion(String equipo){
+        if(equipo.equals("equipo1")){
+            for(int i = 0; i < equipo1.size(); i++){
+                equipo1.get(i).setOro(equipo1.get(i).getOro() + 21);
+                equipo1.get(i).setMinions(equipo1.get(i).getMinions() + 1);
+            }
+        }else{
+            for(int i = 0; i < equipo2.size(); i++){
+                equipo2.get(i).setOro(equipo2.get(i).getOro() + 21);
+                equipo2.get(i).setMinions(equipo2.get(i).getMinions() + 1);
+            }
+        }
+    }
+    
+    public void ganar(String equipo){
+        if(equipo.equals("equipo1")){
+            for(int i = 0; i < equipo1.size(); i++){
+                equipo1.get(i).setOro(equipo1.get(i).getOro() + 50);
+            }
+            System.out.println("Gano el equipo azul");
+        }else{
+            for(int i = 0; i < equipo2.size(); i++){
+                equipo2.get(i).setOro(equipo2.get(i).getOro() + 50);
+            }
+            System.out.println("Gano el equipo rojo");
+        }
     }
     
     public void asesinato(String equipo){
